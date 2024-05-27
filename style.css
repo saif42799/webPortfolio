@@ -1,20 +1,20 @@
+@font-face {
+    font-family: 'cyberform';
+    src: url(fonts/cyberform/cyberform.ttf);
+}
+
 body{
     margin: 0;
     padding: 0;
     background: rgba(21,32,43,255);
 }
+html {
+    scroll-behavior: smooth;
+  }
 p{
     color: #106a00;
-}
-/* scroll bar */
-body::-webkit-scrollbar {
-    width: 0.25rem;
-}
-body::-webkit-scrollbar-track {
-    background: #1e1e24;
-}
-body::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    margin-left: 50px;
+    font-size: 500px;
 }
 /* navbar */
 main{
@@ -23,17 +23,16 @@ main{
 .navbar{
     z-index: 0;
     position: fixed; 
-    top: 0; 
-    right: 0px;
-    width: 3.5rem;
     background-color: #5d5d5d5e;
     border-radius: 50px;
+    width: 3.5rem;
+    top: 30%; 
+    right: 0px;
     margin-right: 25px;
-    margin-top: 200px;
     transition: transform .2s;
 }
 .navbar:hover{
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 .navbar-nav {
     list-style: none;
@@ -45,7 +44,7 @@ main{
 }
 .navbar img {
     z-index: 1;
-    width: 40px;
+    width: 35px;
     margin: 10px;
     transition: transform .2s;
 }
@@ -58,13 +57,20 @@ main{
     height: 5rem;
 }
 .link-text {
-    opacity: 0;
+    font-family: 'cyberform', sans-serif;
+    display: none;
     position: absolute;
-    right: 60px;
+    right: 70px; 
+    white-space: nowrap;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
-.link-text:hover {
-    opacity: 1;
+.nav-item:hover .link-text {
+    display: block;
 }
+
 
 
 
