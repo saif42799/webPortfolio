@@ -1,0 +1,83 @@
+/* head images */
+.headSpace {
+    position: relative;
+    z-index: 1;
+}
+#home {
+    height: 1500px;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, #ff8500, #ff7513, #ff6321, #ff502c, #ff3a36, #ea2a3b, #d31c3d, #bc0e3e, #8b1536, #5c162a, #30121a, #000000);
+}
+.image {
+    /* margin-top: 25%;  */
+    bottom: 30px;
+    position: fixed;
+    transition: transform 0.1s;
+    z-index: 9;
+}
+.image1 { 
+    left: 25%;
+    height: 800px;
+    width: 800px;
+}
+.image2 {
+    left: 28%; /* Adjust the horizontal position relative to container width */
+    height: 800px;
+    width: 800px;
+}
+.image3 {
+    left: 29%; /* Adjust the horizontal position relative to container width */
+    height: 800px;
+    width: 800px;
+}
+
+#about, #projects, #contact{
+    background-color: #000000;
+     width: 100vw;
+     position:relative;
+     z-index:1;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- SECTION 1-->
+ <div id="home">
+     <div class="headSpace">
+  
+     </div>
+     <div class="colorShade">
+         
+     </div>
+ </div>
+ 
+ <!-- SECTION 2-->
+ <div id="about">
+     <div class="infoSection">
+
+     </div>
+ </div>
+
+ <!-- SECTION 3-->
+ <div id="projects">
+     <div class="infoSection">
+
+     </div>
+ </div>
+
+ <!-- SECTION 4-->
+ <div id="contact">
+     <div class="infoSection">
+
+     </div>
+ </div>

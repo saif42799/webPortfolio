@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
 @font-face {
     font-family: 'YatraOne';
     src: url(fonts/Yatra_One/YatraOne-Regular.ttf);
@@ -72,30 +75,70 @@
 }
 /* :root and .darkmode is responsable for dark and light mode */
 :root {
-  --clr-light: #fdffc4;
+  --clr-light: #e2e1e1;
 
 }
 .darkmode {
     /* --clr-light: rgba(21,32,43,255); */
-    --clr-light: black;
+    --clr-light: #075264;
 
   }
-body{
+
+/* -----------------------------background line work----------------------------- */
+ *{
     margin: 0;
     padding: 0;
-    background: var(--clr-light);
+    box-sizing: border-box;
+}
+body{
+    height: 100%; /* Ensure the body stretches to fit the content */
+    margin: 0;
+    padding: 0;
+
+    margin-top: 5rem; 
     animation: bodyTransitionIn 0.75s;
+    background-color: var(--clr-light);;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        #25283b22 100px 102px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        #25283b22 100px 102px
+    );
+
+}
+
+body::before{
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+    z-index: 1;
    
 }
+/* -----------------------------background line work----------------------------- */
+
 html {
     scroll-behavior: smooth;
-  }
-p{
+    height: 100%; /* Ensure the body stretches to fit the content */
+    margin: 0;
+    padding: 0;
+}
+/* p{
     color: #106a00;
     margin-left: 50px;
     font-size: 500px;
-}
-/* navbar */
+} */
+/* -----------------------------navbar----------------------------- */
 main{
     margin-right: 5rem;
 }
@@ -107,6 +150,8 @@ main{
     background-color: #5d5d5d5e;
     border-radius: 50px;
     transition: all .2s;
+
+    z-index: 1000;
 }
 .navbar-nav {
     list-style: none;
@@ -140,59 +185,151 @@ main{
 .navImgTransition {
     animation: navTransitionIn 0.75s;
 }
-/* head images */
-.headSpace {
-    position: relative;
-    z-index: 1;
-}
-#home {
-    height: 1500px;
-    width: 100vw;
-    background-image: linear-gradient(to bottom, #ff8500, #ff7513, #ff6321, #ff502c, #ff3a36, #ea2a3b, #d31c3d, #bc0e3e, #8b1536, #5c162a, #30121a, #000000);
-}
-.image {
-    /* margin-top: 25%;  */
-    bottom: 30px;
-    position: fixed;
-    transition: transform 0.1s;
-    z-index: 9;
-}
-.image1 { 
-    left: 25%;
-    height: 800px;
-    width: 800px;
-}
-.image2 {
-    left: 28%; /* Adjust the horizontal position relative to container width */
-    height: 800px;
-    width: 800px;
-}
-.image3 {
-    left: 29%; /* Adjust the horizontal position relative to container width */
-    height: 800px;
-    width: 800px;
-}
-#about, #projects, #contact{
-   background-color: #000000;
-    width: 100vw;
-    position:relative;
-    z-index:1;
-}
+/* -----------------------------navbar----------------------------- */
+
 .infoSection{
-    background-color: #474747b2;
+    background-color: #4747473a;
     margin-top: 50px;
     margin-left: 50px;
     margin-bottom: 50px;
-    
     border-radius: 50px;
-    height: 100vh;
+    height: 90vh;
     position:relative;
-    z-index:1; 
+    z-index: 1; 
+} 
+
+/* -----------------------------background images----------------------------- */
+#backgroundArm1 {
+    position: absolute;
+    height: 10%;
+    margin-left: 50px;
+    z-index: -1;
+}
+
+#backgroundArm2 {
+    position: absolute;
+    height: 10%;
+    right: 0px;
+    margin-right: 50px;
+    z-index: -1;
+}
+
+#backgroundArm3 {
+    bottom: 0;        
+    left: 50px;        
+    height: 20%;
+    z-index: -1;    
+}
+
+#backgroundArm4 {
+    
+    bottom: 0;         
+    right: 50px;       
+    height: 20%;
+    z-index: -1;  
 }
 
 
+/* -----------------------------background images----------------------------- */
 
 
+/* -----------------------------Intro Page Design----------------------------- */
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
 
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 40s linear infinite;
+    z-index: 2;
+}
 
+@keyframes autoRun {
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
 
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0 ;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 13em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+.banner .content .author {
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+
+.banner .content h2 {
+    font-size: 3em;
+}
+
+.model {
+    background-image: url('images/1-transformed.png');
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+/* -----------------------------Intro Page Design----------------------------- */

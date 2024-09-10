@@ -1,4 +1,5 @@
 
+// In charge of toogling through dark and light mode and saving those changes -------------->
 let darkMode = localStorage.getItem('darkMode');
 
 const darkLightModeToggle = document.querySelector('#darkLightModeToggle');
@@ -30,22 +31,28 @@ darkLightModeToggle.addEventListener('click', () => {
     }
 });
 
-document.addEventListener('mousemove', (e) => {
-    const images = document.querySelectorAll('.image');
-    const container = document.querySelector('.headSpace');
-    const rect = container.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
+// In charge of changing the model img when scrolling -------------->
+const backgroundImages = [
+    'images/1-transformed.png',
+    'images/2-transformed.png',
+    'images/3-transformed.png',
+    'images/4-transformed.png',
+    'images/5-transformed.png',
+    'images/6-transformed.png',
+    'images/7-transformed.png'
+];
 
-    images.forEach((image, index) => {
-        if (index === 1) {
-            image.style.transform = `translate(${offsetX * 0.02}px, ${offsetY * 0.02}px)`;
-        } else if (index === 2) {
-            image.style.transform = `translate(${offsetX * 0.04}px, ${offsetY * 0.04}px)`;
-        }
-    });
+const model = document.querySelector('.model');
+
+const scrollChangeFactor = 0.02; 
+
+window.addEventListener('scroll', () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const scrollPercent = scrollPosition / scrollableHeight;
+    const imageIndex = Math.floor(scrollPercent / scrollChangeFactor) % backgroundImages.length;
+    model.style.backgroundImage = `url(${backgroundImages[imageIndex]})`;
 });
-
 
 
 
