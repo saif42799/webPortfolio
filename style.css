@@ -186,8 +186,10 @@ main{
 }
 /* -----------------------------navbar----------------------------- */
 
+
+
+
 .infoSection{
-    background-color: #4747473a;
     margin-top: 50px;
     margin-left: 50px;
     margin-bottom: 50px;
@@ -196,6 +198,159 @@ main{
     position:relative;
     z-index: 1; 
 } 
+
+/* #profileImg {
+    clip-path: polygon(100% 0, 100% 82%, 82% 100%, 0 100%, 0 0);
+}
+
+#descriptionSection {
+    padding: 100px;
+    width: 100%;
+    background-color: #000000;
+    clip-path: polygon(0 15%, 0 0, 100% 0, 100% 100%, 8% 100%, 0 91%, 0 73%, 6% 64%, 6% 33%, 6% 23%);
+}
+#descriptionSection, p {
+    color: white;
+} */
+
+.aboutSectionGrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    position: relative;
+    /* height: 90vh; */
+    padding: 30px;
+    background-image: url('images/backdrop_1.png');
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 96%, 96% 100%, 0 100%, 0 0);
+
+}
+
+.profileImg {
+    grid-area: 1 / 1 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+.profileImg img {
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+.profileImg img:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
+  
+}
+
+.bioSectiom {
+    grid-area: 1 / 3 / 4 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button1 {
+    grid-area: 4 / 1 / 5 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button2 {
+    grid-area: 4 / 3 / 5 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button3 {
+    grid-area: 4 / 5 / 5 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillSection {
+    grid-area: 5 / 1 / 8 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.descriptionSection{
+    grid-area: 5 / 3 / 8 / 7;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+/* #skillSubSection {
+    clip-path: polygon(0 15%, 0 0, 100% 0, 100% 100%, 8% 100%, 0 91%, 0 73%, 6% 64%, 6% 33%, 6% 23%);
+    background-color: #075264;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin-left: 40px;
+}
+
+#descriptionSub {
+    clip-path: polygon(0 15%, 0 0, 100% 0, 100% 100%, 8% 100%, 0 91%, 0 73%, 6% 64%, 6% 33%, 6% 23%);
+    background-color: #075264;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    float: right;
+    margin-right: 40px;
+    
+  
+} */
+
+#aS1 {
+  width: 70%;
+}
+
+#aS2 {
+    width: 84%;
+}
+
+#aS3 {
+    width: 70%;
+}
+
+#aS4 {
+    width: 70%;
+}
+
+#aS5 {
+    width: 70%;
+}
+
+#aS6 {
+    width: 68%;
+}
+
+#aS7 {
+    width: 81%;
+}
+
+
 
 /* -----------------------------background images----------------------------- */
 #backgroundArm1 {
@@ -221,7 +376,6 @@ main{
 }
 
 #backgroundArm4 {
-    
     bottom: 0;         
     right: 50px;       
     height: 20%;
@@ -265,7 +419,7 @@ main{
     position: absolute;
     inset: 0 0 0 0 ;
     transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        rotateY(calc( (var(--position) - 1) * (205 / var(--quantity)) * 1deg)) /* 205 was 360 */
         translateZ(550px);
 }
 
