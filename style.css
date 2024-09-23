@@ -234,17 +234,6 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
-}
-.profileImg img {
-    opacity: 0.3;
-    transition: transform .2s;
-}
-
-.profileImg img:hover{
-    opacity: 1.0;
-    transform: scale(1.02);
-  
 }
 
 .bioSectiom {
@@ -261,7 +250,6 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
 .button2 {
@@ -297,9 +285,8 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    
 }
+
 
 /* #skillSubSection {
     clip-path: polygon(0 15%, 0 0, 100% 0, 100% 100%, 8% 100%, 0 91%, 0 73%, 6% 64%, 6% 33%, 6% 23%);
@@ -324,32 +311,79 @@ main{
 
 #aS1 {
   width: 70%;
+  opacity: 0.3;
+  transition: transform .2s;
+}
+#aS1:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS2 {
     width: 84%;
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+#aS2:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS3 {
     width: 70%;
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+#aS3:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS4 {
     width: 70%;
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+#aS4:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS5 {
     width: 70%;
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+#aS5:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS6 {
     width: 68%;
+    opacity: 0.3;
+    transition: transform .2s;
+}
+
+#aS6:hover{
+    opacity: 1.0;
+    transform: scale(1.02);
 }
 
 #aS7 {
     width: 81%;
+    opacity: 0.3;
+    transition: transform .2s;
 }
 
+#aS7:hover{
+    opacity: 1.0;
+    transform: scale(1.1);
+}
 
 
 /* -----------------------------background images----------------------------- */
