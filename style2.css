@@ -387,6 +387,7 @@ body::before{
 
 .infoSection{
     height: 100vh;
+   
 } 
 
 .aboutSectionGrid{
@@ -498,3 +499,9 @@ body::before{
 }
 
 
+
+
+.projectSection {
+    height: 100vh;
+    background-color: #000000;
+}
