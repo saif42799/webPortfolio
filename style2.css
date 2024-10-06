@@ -1,21 +1,23 @@
-@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
-@import url('https://fonts.cdnfonts.com/css/poppins');
 
-@font-face {
-    font-family: 'YatraOne';
-    src: url(fonts/Yatra_One/YatraOne-Regular.ttf);
+/* :root and .darkmode is responsable for dark and light mode */
+:root {
+    --clr-light: #e2e1e1;
+  
 }
-
-
-
-
-
-
-
-
-
-
-
+.darkmode {
+    /* --clr-light: rgba(21,32,43,255); */
+    --clr-light: #BD0927;
+  
+}
+   
+/* animation when clicking href to go to specific part of page */
+html {
+    scroll-behavior: smooth;
+    height: 100vh; /* Ensure the body stretches to fit the content */
+    margin: 0;
+    padding: 0;
+}
+  
 /* animation for page start up */
 @keyframes navTransitionIn {
     from {
@@ -26,22 +28,15 @@
         transform: rotate(360deg);
     }
 }
-@keyframes bodyTransitionIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
-}
-/* Adjusting screen depending on device*/
+/* Adjusting screen depending on device*/         
 /* Small Screen */
 @media only screen and (max-width: 600px) {
     .navbar{
+        width: 90vw;
         bottom: 0;
         margin: 25px;
-        width: 90vw;
+    
     }
     .navbar-nav {
         flex-direction: row;
@@ -50,13 +45,10 @@
     .link-text {
         display: none;  
     }
-    .infoSection{
-        /* margin-right: 50px; */
+    .nav-link{
+        justify-content: center;
+     
     }
-
-    
- 
-
 
 }
 /* Big Screen */
@@ -66,6 +58,9 @@
         top: 30%; 
         right: 0px;
         margin-right: 25px;
+    }
+    .navbar-nav {
+        flex-direction: column;
     }
     .navbar:hover{
         transform: scale(1.3);
@@ -77,127 +72,15 @@
     .nav-item:hover .link-text {
         display: block;
     }
-    .navbar-nav {
-        flex-direction: column;
-    }
     .nav-link{
         display: flex;
      
     }
-    .infoSection{
-        /* margin-right: 120px; */
-    }
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* :root and .darkmode is responsable for dark and light mode */
-:root {
-  --clr-light: #e2e1e1;
-
-}
-.darkmode {
-    /* --clr-light: rgba(21,32,43,255); */
-    --clr-light: #BD0927;
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-/* -----------------------------background line work----------------------------- */
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    height: 100vh; /* Ensure the body stretches to fit the content */
-    margin: 0;
-    padding: 0;
-    margin-top: 3rem; 
-    animation: bodyTransitionIn 0.75s;
-    background-color: var(--clr-light);;
-    background-image:
-    repeating-linear-gradient(
-        to right, transparent 0 100px,
-        #25283b22 100px 102px
-    ),
-    repeating-linear-gradient(
-        to bottom, transparent 0 100px,
-        #25283b22 100px 102px
-    );
-
-}
-
-body::before{
-    position: absolute;
-    width: min(1400px, 90vw);
-    top: 10%;
-    left: 50%;
-    height: 100vh;
-    transform: translateX(-50%);
-    content: '';
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    pointer-events: none;
-    z-index: 1;
-
-   
-}
-/* -----------------------------background line work----------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-html {
-    scroll-behavior: smooth;
-    height: 100vh; /* Ensure the body stretches to fit the content */
-    margin: 0;
-    padding: 0;
-}
-/* p{
-    color: #106a00;
-    margin-left: 50px;
-    font-size: 500px;
-} */
 /* -----------------------------navbar----------------------------- */
-main{
-    margin-right: 5rem;
-}
+
 .navbar{
     font-family: Rajdhani, sans-serif;
     font-size: 15px;
@@ -206,7 +89,7 @@ main{
     background-color: #5d5d5d5e;
     border-radius: 50px;
     transition: all .2s;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 .navbar-nav {
     list-style: none;
@@ -247,6 +130,254 @@ main{
 
 
 
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 3rem; 
+    animation: bodyTransitionIn 0.75s;
+    background-color: var(--clr-light);;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        #25283b22 100px 102px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        #25283b22 100px 102px
+    );
+
+}
+
+body::before{
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    height: 100vh;
+    transform: translateX(-50%);
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------Intro Page Design----------------------------- */
+
+@media only screen and (min-width: 600px) {
+    .banner {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .banner .slider{
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        top: 7%;
+        left: calc(50% - 100px);
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        animation: autoRun 40s linear infinite;
+        z-index: 2;
+    }
+    @keyframes autoRun {
+        from{
+            transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+        }to{
+            transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+        }
+    }
+    
+    .banner .slider .item{
+        position: absolute;
+        inset: 0 0 0 0 ;
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) /* 205 was 360 */
+            translateZ(550px);
+    }
+    
+    .banner .slider .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+    }
+
+    .banner .content {
+        display: flex;
+        padding-bottom: 100px;
+    
+    }
+
+    .banner .content .model {
+        width: 100%;
+        height: 75vh;
+        background-size: auto 100%;
+    }
+
+    
+    .banner .content h1{
+        font-size: 13em;
+    }
+
+ 
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .banner {
+        width: 100%;
+        height: 90vh;
+        
+        position: relative;
+    }
+    
+    .banner .slider{
+
+    }
+    @keyframes autoRun {
+
+    }
+    
+    .banner .slider .item{
+        position: absolute;
+       
+    
+    }
+    
+    .banner .slider .item img{
+        width: 16%;
+        opacity: 0;
+
+    }
+
+    .banner .content {
+        padding-bottom: 10px;
+
+    }
+
+    
+    .banner .content .model {
+        width: 100%;
+        height: 80vh;
+        background-size: auto 80%;
+        
+    }
+    .banner .content h1 {
+        font-size: 5em;
+    }
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.header {
+    height: 100vh;
+    flex: 1;
+}
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    /* padding-bottom: 100px; */
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.banner .content h1{
+    font-family: Rajdhani, sans-serif;
+    /* font-size: 13em; */
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+.banner .content .author {
+    font-family: Rajdhani, sans-serif;
+    text-align: right;
+    max-width: 200px;
+}
+
+.banner .content h2 {
+    font-size: 3em;
+}
+
+.banner .content .model {
+    background-image: url('images/1-transformed.png');
+    /* width: 100%;
+    height: 75vh; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background-size: auto 100%; */
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+/* -----------------------------Intro Page Design----------------------------- */
+
+
+
+
+
 
 
 
@@ -256,18 +387,11 @@ main{
 
 .infoSection{
     height: 100vh;
-    position:relative;
-    z-index: 1; 
-    
 } 
 
 .aboutSectionGrid{
-
-    gap: 50px;
     padding: 30px;
     background-color: #0D1105;
-    height: 100vh;
-
 }
 
 .gridSection1{
@@ -374,243 +498,3 @@ main{
 }
 
 
-
-
-
-
-
-
-
-
-
-/* -----------------------------background images----------------------------- */
-#backgroundArm1 {
-    position: absolute;
-    height: 10%;
-    margin-left: 50px;
-    z-index: -1;
-}
-
-#backgroundArm2 {
-    position: absolute;
-    height: 10%;
-    right: 0px;
-    margin-right: 50px;
-    z-index: -1;
-}
-
-#backgroundArm3 {
-    bottom: 0;              
-    height: 10%;
-    margin-left: 50px;
-    z-index: -1;    
-}
-
-#backgroundArm4 {
-        
-    height: 10%;
-    right: 0px; 
-    margin-left: 1000px;
-    margin-right: 50px;
-    z-index: -1;  
-}
-
-
-/* -----------------------------background images----------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -----------------------------Intro Page Design----------------------------- */
-
-@media only screen and (min-width: 600px) {
-    .banner {
-        width: 100%;
-        height: 100vh;
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .banner .slider{
-        position: absolute;
-        width: 200px;
-        height: 250px;
-        top: 7%;
-        left: calc(50% - 100px);
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
-        animation: autoRun 40s linear infinite;
-        z-index: 2;
-    }
-    @keyframes autoRun {
-        from{
-            transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-        }to{
-            transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
-        }
-    }
-    
-    .banner .slider .item{
-        position: absolute;
-        inset: 0 0 0 0 ;
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) /* 205 was 360 */
-            translateZ(550px);
-    }
-    
-    .banner .slider .item img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    
-    }
-
-    .banner .content {
-        display: flex;
-        padding-bottom: 100px;
-    
-    }
-
-    .banner .content .model {
-        width: 100%;
-        height: 75vh;
-        background-size: auto 100%;
-    }
-
-    
-    .banner .content h1{
-        font-size: 13em;
-    }
-
- 
-}
-
-@media only screen and (max-width: 600px) {
-
-    .banner {
-        width: 100%;
-        height: 90vh;
-        
-        position: relative;
-    }
-    
-    .banner .slider{
-
-    }
-    @keyframes autoRun {
-
-    }
-    
-    .banner .slider .item{
-        position: absolute;
-       
-    
-    }
-    
-    .banner .slider .item img{
-        width: 16%;
-        opacity: 0;
-
-    }
-
-    .banner .content {
-        padding-bottom: 10px;
-
-    }
-
-    
-    .banner .content .model {
-        width: 100%;
-        height: 80vh;
-        background-size: auto 80%;
-        
-    }
-    .banner .content h1 {
-        font-size: 5em;
-    }
-    
-    
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.banner .content {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(1400px, 100vw);
-    height: max-content;
-    /* padding-bottom: 100px; */
-    /* display: flex; */
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-
-}
-
-.banner .content h1{
-    font-family: Rajdhani, sans-serif;
-    /* font-size: 13em; */
-    line-height: 1em;
-    color: #25283B;
-    position: relative;
-}
-
-.banner .content h1::after {
-    position: absolute;
-    inset: 0 0 0 0;
-    content: attr(data-content);
-    z-index: 2;
-    -webkit-text-stroke: 2px #d2d2d2;
-    color: transparent;
-}
-
-.banner .content .author {
-    font-family: Rajdhani, sans-serif;
-    text-align: right;
-    max-width: 200px;
-}
-
-.banner .content h2 {
-    font-size: 3em;
-}
-
-.banner .content .model {
-    background-image: url('images/1-transformed.png');
-    /* width: 100%;
-    height: 75vh; */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    /* background-size: auto 100%; */
-    background-repeat: no-repeat;
-    background-position: top center;
-    z-index: 1;
-}
-
-/* -----------------------------Intro Page Design----------------------------- */
