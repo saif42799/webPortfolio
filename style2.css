@@ -201,9 +201,9 @@ body::before{
     
     .banner .slider{
         position: absolute;
-        width: 200px;
-        height: 250px;
-        top: 7%;
+        width: 150px;
+        height: 200px;
+        top: 9%;
         left: calc(50% - 100px);
         transform-style: preserve-3d;
         transform: perspective(1000px);
@@ -223,7 +223,7 @@ body::before{
         inset: 0 0 0 0 ;
         transform: 
             rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) /* 205 was 360 */
-            translateZ(550px);
+            translateZ(500px);
     }
     
     .banner .slider .item img{
@@ -236,6 +236,7 @@ body::before{
     .banner .content {
         display: flex;
         padding-bottom: 100px;
+        padding-right: 65px;
     
     }
 
@@ -247,7 +248,8 @@ body::before{
 
     
     .banner .content h1{
-        font-size: 13em;
+        font-size: 7em;
+        margin-left: 100px;
     }
 
  
@@ -295,7 +297,7 @@ body::before{
         
     }
     .banner .content h1 {
-        font-size: 5em;
+        font-size: 3em;
     }
     
     
@@ -385,13 +387,10 @@ body::before{
 
 
 
-.infoSection{
-    height: 100vh;
-   
-} 
 
 .aboutSectionGrid{
-    padding: 30px;
+    height: auto;
+    padding: 50px;
     background-color: #0D1105;
 }
 
@@ -399,7 +398,7 @@ body::before{
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, 300px);
-    margin-left: 260px;    
+    margin-left: 10%;    
   
 }
 
@@ -407,7 +406,7 @@ body::before{
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, 300px);
-    margin-left: 260px;
+    margin-left: 12%;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -416,7 +415,7 @@ body::before{
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, 300px);
-    margin-left: 260px;
+    margin-left: 10%;
     
 }
 
@@ -501,7 +500,40 @@ body::before{
 
 
 
-.projectSection {
-    height: 100vh;
+
+
+
+
+.projectSection{
+    height: auto;
     background-color: #000000;
+   
+    padding: 50px;
+    
+}
+
+.projectSectionGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #ffffff;
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.contactSection {
+    height: auto;
+    min-height: calc(100vh - 3rem);
+    background-color: #006093;
+    padding-top: 3rem;
+   
 }
