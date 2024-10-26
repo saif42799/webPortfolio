@@ -507,18 +507,108 @@ body::before{
 .projectSection{
     height: auto;
     background-color: #000000;
-   
-    padding: 50px;
+    padding: 100px;
     
 }
 
 .projectSectionGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid #ffffff;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: stretch;
+    justify-content: center;
+    gap: 2em;
+    overflow: hidden;
     
+}
+
+.projectSectionGrid > .project{
+    position: relative;
+    padding: 2em;
 
 }
+
+.projectSectionGrid > .githubLink{
+    position: relative;
+    padding: 2em;
+
+}
+
+.projectSectionGrid > .project::before,
+.projectSectionGrid > .project::after{
+    content: "";
+    background-color: #BD0927;
+    position: absolute;
+
+}
+
+.projectSectionGrid > .githubLink::before,
+.projectSectionGrid > .githubLink::after{
+    content: "";
+    background-color: #BD0927;
+    position: absolute;
+
+}
+
+.projectSectionGrid > .project::after{
+    width: 100vw;
+    height: 2px;
+    top: -1em;
+    left: 0;
+
+}
+
+.projectSectionGrid > .project::before{
+    width: 2px;
+    height: 100vh;
+    top: 0;
+    left: -1em;
+
+}
+
+.projectSectionGrid > .githubLink::after{
+    width: 100vw;
+    height: 2px;
+    top: -1em;
+    left: 0;
+
+}
+
+.projectSectionGrid > .githubLink::before{
+    width: 2px;
+    height: 100vh;
+    top: 0;
+    left: -1em;
+
+}
+
+.project img {
+    height: 75%;
+    transition: all .2s;
+}
+
+.githubLink img {
+    height: 75%;
+    transition: all .2s;
+}
+
+.project img:hover{
+    transform: scale(1.3);
+}
+
+.githubLink img:hover{
+    transform: scale(1.3);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -533,7 +623,7 @@ body::before{
 .contactSection {
     height: auto;
     min-height: calc(100vh - 3rem);
-    background-color: #006093;
+    /* background-color: #006093; */
     padding-top: 3rem;
    
 }
